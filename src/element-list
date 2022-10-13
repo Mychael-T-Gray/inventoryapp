@@ -1,0 +1,4 @@
+module:gray.inventoryapp
+gray.inventoryapp.controller
+gray.inventoryapp.main
+gray.inventoryapp.model

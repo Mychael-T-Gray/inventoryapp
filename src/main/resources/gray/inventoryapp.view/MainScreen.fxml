@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gray.inventoryapp.controller.MainScreenController">
+   <children>
+      <HBox alignment="CENTER" layoutX="50.0" layoutY="70.0" prefHeight="30.0" prefWidth="325.0" spacing="50.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="49.0" text="Parts">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="mainScreenPartsSearchBox" onAction="#mainScreenOnClickPartsSearch" prefHeight="30.0" prefWidth="207.0" promptText="Search by Product ID or Name">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <Label text="Inventory Management System">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <padding>
+            <Insets left="20.0" top="20.0" />
+         </padding>
+      </Label>
+      <HBox alignment="CENTER" layoutX="50.0" layoutY="100.0" prefHeight="250.0" prefWidth="700.0" spacing="50.0">
+         <children>
+            <AnchorPane prefHeight="225.0" prefWidth="325.0">
+               <children>
+                  <TableView fx:id="mainScreenPartTable" prefHeight="200.0" prefWidth="325.0">
+                    <columns>
+                      <TableColumn fx:id="mainScreenPartIdCol" prefWidth="75.0" text="Part ID" />
+                      <TableColumn fx:id="mainScreenPartNameCol" prefWidth="75.0" text="Part Name" />
+                        <TableColumn fx:id="mainScreenPartInvLevelCol" prefWidth="87.5" text="Inventory Level" />
+                        <TableColumn fx:id="mainScreenPartsPriceColumn" prefWidth="87.5" text="Price / Cost Per Unit" />
+                    </columns>
+                  </TableView>
+                  <HBox alignment="CENTER_RIGHT" layoutX="101.0" layoutY="203.0" prefHeight="47.0" prefWidth="226.0" spacing="25.0">
+                     <children>
+                        <Button fx:id="openAddPartButton" mnemonicParsing="false" onAction="#onClickOpenAddPartForm" text="ADD" />
+                        <Button fx:id="modifyPartFormButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onClickOpenModifyPartForm" text="MODIFY" />
+                        <Button fx:id="deletePartButton" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#onClickDeleteSelectedPart" text="DELETE" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="250.0" prefWidth="333.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <children>
+                  <TableView fx:id="mainScreenProductTableView" prefHeight="200.0" prefWidth="325.0">
+                    <columns>
+                      <TableColumn fx:id="mainScreenProductIdCol" prefWidth="75.0" text="Product ID" />
+                      <TableColumn fx:id="mainScreenProductNameCol" prefWidth="75.0" text="Product Name" />
+                        <TableColumn fx:id="mainScreenProductInventoryCol" prefWidth="87.5" text="Inventory Level" />
+                        <TableColumn fx:id="mainScreenProductPriceCol" prefWidth="87.5" text="Price / Cost Per Unit" />
+                    </columns>
+                  </TableView>
+                  <HBox alignment="CENTER_RIGHT" layoutX="99.0" layoutY="200.0" prefHeight="47.0" prefWidth="226.0" spacing="25.0">
+                     <children>
+                        <Button fx:id="mainScreenAddProductButton" mnemonicParsing="false" onAction="#onClickOpenAddProductForm" text="ADD" />
+                        <Button fx:id="mainScreenModifyProductButton" layoutX="184.0" layoutY="21.0" mnemonicParsing="false" onAction="#onClickOpenModifyProductForm" text="MODIFY" />
+                        <Button fx:id="mainScreenDeleteProductForm" layoutX="184.0" layoutY="21.0" mnemonicParsing="false" onAction="#onClickOpenDeleteProductForm" text="DELETE" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <HBox layoutX="429.0" layoutY="67.0" prefHeight="30.0" prefWidth="321.0" spacing="50.0">
+         <children>
+            <Label text="Products">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="mainScreenProductsSearchBox" onAction="#searchMainScreenProducts" alignment="CENTER_RIGHT" prefHeight="38.0" prefWidth="215.0" promptText="Search By Product ID or Name">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+         </children>
+      </HBox>
+      <Button fx:id="exitAppMainScreenButton" layoutX="700.0" layoutY="361.0" mnemonicParsing="false" onAction="#onClickExitApp" text="EXIT" />
+   </children>
+</AnchorPane>

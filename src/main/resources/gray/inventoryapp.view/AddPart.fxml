@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gray.inventoryapp.controller.AddPartController">
+   <children>
+      <Label layoutX="108.0" layoutY="58.0" text="ADD PART">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="addPartFormInHouseRadio" layoutX="257.0" layoutY="63.0" mnemonicParsing="false" onAction="#onSelectAddPartInHouse" text="In-House">
+         <toggleGroup>
+            <ToggleGroup fx:id="partToggleGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="appPartFormOutsourcedRadio" layoutX="388.0" layoutY="63.0" mnemonicParsing="false" onAction="#onSelectAddPartOutSourced" text="Outsourced" toggleGroup="$partToggleGroup" />
+      <Label layoutX="150.0" layoutY="140.0" text="ID">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField editable="false" layoutX="225.0" layoutY="140.0" promptText="Auto Gen- Disabled" />
+      <Label layoutX="150.0" layoutY="177.0" text="Name">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="addPartName" layoutX="225.0" layoutY="175.0" />
+      <Label layoutX="150.0" layoutY="213.0" text="Inv">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="addPartInv" layoutX="225.0" layoutY="210.0" />
+      <TextField fx:id="addPartPrice" layoutX="225.0" layoutY="245.0" />
+      <TextField fx:id="addPartMax" layoutX="225.0" layoutY="280.0" prefHeight="25.0" prefWidth="40.0" />
+      <TextField fx:id="addPartMin" layoutX="335.0" layoutY="280.0" prefHeight="25.0" prefWidth="40.0" />
+      <Label layoutX="150.0" layoutY="249.0" text="Price/Cost">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="150.0" layoutY="280.0" text="Max">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="287.0" layoutY="280.0" text="Min">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="machineIdOrCompanyName" layoutX="144.0" layoutY="332.0" text="Machine ID">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="addPartMachineID" layoutX="264.0" layoutY="328.0" prefHeight="25.0" prefWidth="115.0" />
+      <Button fx:id="addPartFormSave" layoutX="404.0" layoutY="353.0" mnemonicParsing="false" onAction="#onClickSavePartDirectToMain" text="SAVE" />
+      <Button fx:id="addPartCancelButton" layoutX="482.0" layoutY="353.0" mnemonicParsing="false" onAction="#onClickCancelDirectToMain" text="CANCEL" />
+   </children>
+</AnchorPane>
